@@ -1,6 +1,9 @@
 [build]
-  command = "ng build --prod"
+  command = "yarn build"
   publish = "dist"
+  environment = { NODE_VERSION = 12, NODE_ENV = "production" }
+[build.environment]
+  NODE_VERSION = 12
 
 [[redirects]]
   from = "/*"
