@@ -64,5 +64,6 @@ export default new Vuex.Store<DomainhackState>({
   getters: {
     input: state => state.input,
     list: state => state.list,
+    matched: state => state.matched,
   }
 });
