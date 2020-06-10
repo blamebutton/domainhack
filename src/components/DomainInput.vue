@@ -1,7 +1,7 @@
 <template>
   <div>
     <label for="domain">Domain</label>
-    <input id="domain" type="text" v-model="input">
+    <input id="domain" type="text" v-model="input" autocomplete="off">
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component({
   computed: {
-    'input': {
+    input: {
       get() {
         return this.$store.getters['input'];
       },

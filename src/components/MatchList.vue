@@ -6,7 +6,7 @@
         <th>Domain</th>
         <th>Suffix</th>
       </tr>
-      <tr v-for="(match, index) in matched" v-bind:key="index">
+      <tr v-bind:key="index" v-for="(match, index) in matched">
         <td>{{ match.prefix }}</td>
         <td>{{ match.domain }}</td>
         <td>{{ match.suffix }}</td>
@@ -17,10 +17,11 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
+import {Match} from '@/store/types';
 
 @Component({
   computed: {
-    'matched': function () {
+    matched: function (): Match[] {
       return this.$store.getters['matched'];
     }
   }
@@ -30,8 +31,6 @@ export default class MatchList extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-tr, th, td {
-  border: 1px solid black;
-}
+<style lang="scss" scoped>
+
 </style>

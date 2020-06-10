@@ -1,21 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import {DomainState, Match} from "@/store/types";
 
 Vue.use(Vuex);
 
-type DomainhackState = {
-  input: string;
-  matched: Match[];
-  list: string[];
-}
-
-type Match = {
-  prefix?: string;
-  domain?: string;
-  suffix?: string;
-}
-
-export default new Vuex.Store<DomainhackState>({
+export default new Vuex.Store<DomainState>({
   strict: process.env.NODE_ENV !== 'production',
   modules: {},
   state: {
@@ -24,21 +13,21 @@ export default new Vuex.Store<DomainhackState>({
     list: [],
   },
   mutations: {
-    'set-tlds': (state, payload: string[]) => {
+    'set-tld-list': (state, payload: string[]) => {
       state.list = payload;
     },
     'set-input': (state, payload: string) => {
       state.input = payload;
     },
     'set-matched': (state, payload: Match[]) => {
-      state.matched.push(...payload);
+      state.matched = payload;
     },
   },
   actions: {
-    'load-tlds': async store => {
-      const response = await fetch('/tlds.json');
+    'load-tld-list': async store => {
+      const response = await fetch('/tld-list.json');
       const list = await response.json();
-      store.commit('set-tlds', list);
+      store.commit('set-tld-list', list);
     },
     'input-update': (store, input: string) => {
       store.commit('set-input', input);

@@ -9,7 +9,7 @@ const run = async () => {
     .filter(value => value.trim().length > 0)
     .map(value => value.toLowerCase());
   const root = path.dirname(__dirname);
-  await writeFile(`${root}/public/tlds.json`, JSON.stringify(tldList));
+  await writeFile(`${root}/public/tld-list.json`, JSON.stringify(tldList));
 };
 
 run()
