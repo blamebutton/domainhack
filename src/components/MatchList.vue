@@ -4,12 +4,10 @@
       <tr>
         <th>Prefix</th>
         <th>Domain</th>
-        <th>Suffix</th>
       </tr>
       <tr v-bind:key="index" v-for="(match, index) in matched">
         <td>{{ match.prefix }}</td>
         <td>{{ match.domain }}</td>
-        <td>{{ match.suffix }}</td>
       </tr>
     </table>
   </div>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <label for="domain">Domain</label>
+    &nbsp;
     <input id="domain" type="text" v-model="input" autocomplete="off">
   </div>
 </template>
@@ -15,7 +16,7 @@ import {Component, Vue} from 'vue-property-decorator';
         return this.$store.getters['input'];
       },
       set(value) {
-        this.$store.dispatch('input-update', value);
+        this.$store.dispatch('input:update', value);
       }
     }
   }

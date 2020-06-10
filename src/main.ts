@@ -9,6 +9,6 @@ new Vue({
   store,
   render: (h) => h(App),
   mounted() {
-    this.$store.dispatch('load-tld-list');
+    this.$store.dispatch('tld-list:load');
   }
 }).$mount('#app');

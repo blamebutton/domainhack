@@ -7,5 +7,4 @@ export type DomainState = {
 export type Match = {
   prefix?: string;
   domain?: string;
-  suffix?: string;
 }
