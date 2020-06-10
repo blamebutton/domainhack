@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import DomainInput from '@/components/DomainInput.vue';
 
-describe('HelloWorld.vue', () => {
+describe('DomainInput.vue', () => {
   it('renders props.msg when passed', () => {
     const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
+    const wrapper = shallowMount(DomainInput, {
       propsData: { msg },
     });
     expect(wrapper.text()).toMatch(msg);
