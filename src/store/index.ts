@@ -37,8 +37,10 @@ export default new Vuex.Store<DomainState>({
           /* Split the domain based on TLD found */
           const index = input.indexOf(domain);
           const prefix = input.substring(0, index);
-          return {prefix, domain};
-        });
+          const suffix = input.substring(index + prefix.length, input.length);
+          return {prefix, domain, suffix};
+        })
+        .filter(domain => !domain.suffix);
       /* Commit the matched list to the store */
       store.commit('matched:set', matched);
     }

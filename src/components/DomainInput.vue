@@ -1,8 +1,13 @@
 <template>
-  <div>
-    <label for="domain">Domain</label>
+  <div class="w-full">
+    <label class="label" for="domain">Domain</label>
     &nbsp;
-    <input id="domain" type="text" v-model="input" autocomplete="off">
+    <input
+      autocomplete="off"
+      autofocus
+      class="input"
+      id="domain"
+      placeholder="johndeer" type="text" v-model="input">
   </div>
 </template>
 
@@ -25,7 +30,17 @@ export default class DomainInput extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!--suppress CssInvalidAtRule -->
 <style scoped lang="scss">
+.label {
+  @apply block text-gray-700 text-sm font-bold mb-2;
+}
 
+.input {
+  @apply transition duration-200 ease-in-out shadow appearance-none border rounded w-full py-2 px-3 text-gray-700;
+
+  &:focus {
+    @apply outline-none shadow-outline;
+  }
+}
 </style>

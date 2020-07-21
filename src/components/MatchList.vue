@@ -1,15 +1,10 @@
 <template>
-  <div>
-    <table>
-      <tr>
-        <th>Prefix</th>
-        <th>Domain</th>
-      </tr>
-      <tr v-bind:key="index" v-for="(match, index) in matched">
-        <td>{{ match.prefix }}</td>
-        <td>{{ match.domain }}</td>
-      </tr>
-    </table>
+  <div class="flex flex-col">
+    <a :href="getDomainUrl(match.domain)" class="anchor" target="_blank"
+       v-bind:key="index"
+       v-for="(match, index) in matched">
+      {{ match.prefix }}.<span class="link">{{ match.domain }}</span>
+    </a>
   </div>
 </template>
 
@@ -25,10 +20,27 @@ import {Match} from '@/store/types';
   }
 })
 export default class MatchList extends Vue {
+  /**
+   * Format the domain URL link to buy the TLD.
+   * @param {string} tld
+   */
+  getDomainUrl(tld: string): string {
+    return `https://tld-list.com/tld/${tld}`;
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!--suppress CssInvalidAtRule -->
 <style lang="scss" scoped>
+.anchor {
+  @apply block py-2 px-3 border-b-2 border-gray-400 w-auto;
+}
 
+.link {
+  @apply no-underline text-blue-500;
+
+  &:hover {
+    @apply underline;
+  }
+}
 </style>
