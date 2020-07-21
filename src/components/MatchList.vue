@@ -1,9 +1,13 @@
 <template>
   <div class="flex flex-col">
-    <a :href="getDomainUrl(match.domain)" class="anchor" target="_blank"
+    <p class="text-gray-700 text-sm font-bold mb-2">Suggested domain hacks</p>
+    <a :href="getDomainUrl(match.domain)" class="match" target="_blank"
        v-bind:key="index"
        v-for="(match, index) in matched">
-      {{ match.prefix }}.<span class="link">{{ match.domain }}</span>
+      <div class="mr-auto">
+        <span class="domain">{{ match.prefix }}</span>.<span class="extension">{{ match.domain }}</span>
+      </div>
+      <div class="pricing">Pricing</div>
     </a>
   </div>
 </template>
@@ -32,15 +36,23 @@ export default class MatchList extends Vue {
 
 <!--suppress CssInvalidAtRule -->
 <style lang="scss" scoped>
-.anchor {
-  @apply block py-2 px-3 border-b-2 border-gray-400 w-auto;
+.match {
+  @apply flex flex-row py-2 px-3 border-b-2 border-gray-400 w-auto;
 
-  &:hover {
-    @apply underline;
+  .domain {
+    @apply text-gray-800;
   }
 
-  .link {
-    @apply no-underline text-blue-500;
+  .extension {
+    @apply text-teal-500;
+  }
+
+  .pricing {
+    @apply text-sm text-blue-400;
+
+    &:hover {
+      @apply underline text-blue-800;
+    }
   }
 }
 
