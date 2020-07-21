@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import Vuex, {ActionContext} from 'vuex';
+import Vue from "vue";
+import Vuex, {ActionContext} from "vuex";
 import {DomainState, Match} from "@/store/types";
 
 Vue.use(Vuex);
