@@ -34,13 +34,14 @@ export default class MatchList extends Vue {
 <style lang="scss" scoped>
 .anchor {
   @apply block py-2 px-3 border-b-2 border-gray-400 w-auto;
-}
-
-.link {
-  @apply no-underline text-blue-500;
 
   &:hover {
     @apply underline;
   }
+
+  .link {
+    @apply no-underline text-blue-500;
+  }
 }
+
 </style>
