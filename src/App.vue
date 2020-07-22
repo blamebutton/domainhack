@@ -12,15 +12,9 @@ import Search from "@/components/Search.vue";
 
 @Component({
   components: {Explanation, Search},
-
 })
 export default class App extends Vue {
 }
 </script>
 
 <style src="./assets/tailwind.css"/>
-<style lang="scss">
-html, body {
-  height: 100%;
-}
-</style>
