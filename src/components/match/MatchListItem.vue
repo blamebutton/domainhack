@@ -20,7 +20,7 @@ import {Match} from "@/store/types";
     }
   }
 })
-export default class MatchItem extends Vue {
+export default class MatchListItem extends Vue {
   /**
    * Format the domain URL link to buy the TLD.
    * @param {string} tld
@@ -30,34 +30,3 @@ export default class MatchItem extends Vue {
   }
 }
 </script>
-
-<!--suppress CssInvalidAtRule -->
-<style lang="scss" scoped>
-.match {
-  @apply ;
-
-  .domain {
-    @apply ;
-
-    .prefix {
-      @apply ;
-    }
-
-    .separator {
-      @apply ;
-    }
-
-    .extension {
-      @apply text-gray-800;
-    }
-  }
-
-  .pricing {
-    @apply text-sm text-blue-400;
-
-    &:hover {
-      @apply underline text-blue-800;
-    }
-  }
-}
-</style>

@@ -18,18 +18,13 @@ import NoInput from "@/components/search/NoInput.vue";
   components: {InputField, MatchList, NoMatch, NoInput},
   computed: {
     hasInput: function (): boolean {
-      return this.$store.getters['input'];
+      return this.$store.getters.input;
     },
     hasMatches: function (): boolean {
-      return this.$store.getters['matched'].length > 0;
-    }
+      return this.$store.getters.matches.length > 0;
+    },
   }
 })
 export default class Search extends Vue {
-
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

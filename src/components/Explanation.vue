@@ -21,7 +21,3 @@ import {Component, Vue} from "vue-property-decorator";
 export default class Explanation extends Vue {
 }
 </script>
-
-<!--suppress CssInvalidAtRule -->
-<style lang="scss" scoped>
-</style>

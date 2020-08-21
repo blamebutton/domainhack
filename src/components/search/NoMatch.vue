@@ -12,7 +12,3 @@ export default class NoMatch extends Vue {
 
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

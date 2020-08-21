@@ -47,7 +47,7 @@ export default new Vuex.Store<DomainState>({
   },
   getters: {
     input: (state: DomainState): string => state.input,
-    matched: (state: DomainState): Match[] => state.matched,
+    matches: (state: DomainState): Match[] => state.matched,
     list: (state: DomainState): string[] => state.list,
   }
 });
