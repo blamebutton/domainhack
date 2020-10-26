@@ -17,10 +17,10 @@ import NoInput from "@/components/search/NoInput.vue";
 @Component({
   components: {InputField, MatchList, NoMatch, NoInput},
   computed: {
-    hasInput: function (): boolean {
+    hasInput(): boolean {
       return this.$store.getters.input;
     },
-    hasMatches: function (): boolean {
+    hasMatches(): boolean {
       return this.$store.getters.matches.length > 0;
     },
   }
