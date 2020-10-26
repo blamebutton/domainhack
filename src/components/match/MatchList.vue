@@ -14,7 +14,7 @@ import MatchListItem from "@/components/match/MatchListItem.vue";
 @Component({
   components: {MatchListItem},
   computed: {
-    matches: function (): Match[] {
+    matches(): Match[] {
       return this.$store.getters.matches;
     }
   }
