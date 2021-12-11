@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+
+# Visual Studio Code
+.vscode
+
+# JetBrains
+.idea
+*.iml

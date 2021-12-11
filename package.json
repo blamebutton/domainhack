@@ -1,0 +1,24 @@
+{
+  "name": "domainhack-vue3",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "gentld": "node tools/generate-tld-list.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.2.23"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.10.2",
+    "autoprefixer": "^10.4.0",
+    "node-fetch": "^3.1.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^3.0.1",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.0",
+    "vue-tsc": "^0.28.10",
+    "vuex": "^4.0.2"
+  }
+}
