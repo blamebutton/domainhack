@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { computed } from "@vue/reactivity";
-import { useStore } from "vuex";
-import { DomainState, key, Match } from "../../store";
-import MatchListItem from "./MatchListItem.vue";
+import {computed} from '@vue/reactivity'
+import {useStore} from 'vuex'
+import {DomainState, Match, key} from '../../store'
+import MatchListItem from './MatchListItem.vue'
 
-const store = useStore<DomainState>(key);
+const store = useStore<DomainState>(key)
 
-const matches = computed((): Match[] => store.getters.matches);
+const matches = computed((): Match[] => store.getters.matches)
 </script>
 
 <template>
@@ -16,7 +16,7 @@ const matches = computed((): Match[] => store.getters.matches);
     </p>
     <MatchListItem
       v-for="(match, index) in matches"
-      v-bind:key="index"
+      :key="index"
       :match="match"
     />
   </div>

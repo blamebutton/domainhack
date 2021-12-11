@@ -5,14 +5,20 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue src",
     "gentld": "node tools/generate-tld-list.mjs"
   },
   "dependencies": {
     "vue": "^3.2.23"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
     "@vitejs/plugin-vue": "^1.10.2",
     "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-vue": "^8.2.0",
     "node-fetch": "^3.1.0",
     "postcss": "^8.4.4",
     "tailwindcss": "^3.0.1",

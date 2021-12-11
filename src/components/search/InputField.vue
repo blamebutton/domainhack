@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed } from "@vue/reactivity";
-import { useStore } from "vuex";
-import { DomainState, key } from "../../store";
+import {computed} from '@vue/reactivity'
+import {useStore} from 'vuex'
+import {DomainState, key} from '../../store'
 
-const store = useStore<DomainState>(key);
+const store = useStore<DomainState>(key)
 
 const input = computed({
-  get: () => store.getters.input,
-  set: (value) => store.dispatch("updateInput", value),
-});
+	get: () => store.getters.input,
+	set: (value) => store.dispatch('updateInput', value),
+})
 </script>
 
 <template>
@@ -20,6 +20,8 @@ const input = computed({
       Domain
     </label>
     <input
+      id="domain"
+      v-model="input"
       autocomplete="off"
       autofocus
       class="
@@ -39,10 +41,8 @@ const input = computed({
         transition
         duration-300
       "
-      id="domain"
       placeholder="john-deer"
       type="text"
-      v-model="input"
-    />
+    >
   </div>
 </template>

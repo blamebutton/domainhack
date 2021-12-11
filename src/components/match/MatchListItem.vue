@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { Match } from "../../store";
+import {Match} from '../../store'
 
 const props = defineProps<{
   match: Match;
-}>();
+}>()
 
 function getDomainLink(domain?: string): string {
-  return domain ? `https://tld-list.com/tld/${domain}` : "";
+	return domain ? `https://tld-list.com/tld/${domain}` : ''
 }
 </script>
 
@@ -14,12 +14,12 @@ function getDomainLink(domain?: string): string {
 <template>
   <a
     class="flex flex-row py-2 px-3 border-b-2 border-gray-400 w-auto"
-    :href="getDomainLink(match.domain)"
+    :href="getDomainLink(props.match.domain)"
   >
     <div class="mr-auto text-gray-800 dark:text-gray-200">
-      <span>{{ match.prefix }}</span>
+      <span>{{ props.match.prefix }}</span>
       <span>&period;</span>
-      <span>{{ match.domain }}</span>
+      <span>{{ props.match.domain }}</span>
     </div>
     <div
       class="
